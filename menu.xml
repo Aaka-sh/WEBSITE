@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type = "text/xsl" href = "grocery.xsl"?>
+
+<grocery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="grocery.xsd">
+    <item>
+        <name>Amul Milk</name>
+        <quantity>1</quantity>
+        <price>50</price>
+        <description>Supplier - Deleazzy Grocery Ltd.</description>
+        <calories>650</calories>
+    </item>
+    <item>
+        <name>Amul Butter</name>
+        <quantity>200</quantity>
+        <price>90</price>
+        <description>Supplier - Deleazzy Grocery Ltd.</description>
+        <calories>1200</calories>
+    </item>
+    <item>
+        <name>Amul Bread</name>
+        <quantity>500</quantity>
+        <price>35</price>
+        <description>Supplier - Deleazzy Grocery Ltd.</description>
+        <calories>450</calories>
+    </item>
+    <item>
+        <name>Real Mixed Fruit Juice</name>
+        <quantity>1</quantity>
+        <price>150</price>
+        <description>Supplier - Deleazzy Grocery Ltd.</description>
+        <calories>1650</calories>
+    </item>
+    <item>
+        <name>Kellogs Cornflakes Honey and Almond</name>
+        <quantity>1</quantity>
+        <price>350</price>
+        <description>Supplier - Deleazzy Grocery Ltd.</description>
+        <calories>1250</calories>
+    </item>
+    <item>
+        <name>Sofit Almond Milk</name>
+        <quantity>1</quantity>
+        <price>540</price>
+        <description>Supplier - Deleazzy Grocery Ltd.</description>
+        <calories>650</calories>
+    </item>
+</grocery>

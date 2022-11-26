@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type = "text/xsl" href = "groc1.xsl"?>
+
+<course xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="groc1.xsd">
+    <student>
+        <name>Raj Sharma</name>
+        <regno>6969691</regno>
+        <class>MCA</class>
+        <marks>90</marks>
+    </student>
+</course>
