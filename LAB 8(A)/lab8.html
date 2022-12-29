@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DelEazzy</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Spectral&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="deleazzy.js"></script>
+</head>
+<body ng-app="myapp">
+    <div class="header">
+        <svg class="header--image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
+        <h2 class="header--title">DelEazzy</h2>
+        <a href = "#!products" ><button class="about--button">PRODUCTS</button></a>
+        <a href = "#!register" ><button class="about--button">REGISTER</button></a>
+        <a href = "#!about" ><button class="about--button">ABOUT</button></a>
+        
+    </div>
+    <div class="intro">
+        <div>
+            <h2 class="heading">Get the groceries <br />delivered in minutes <br/> from the house of DelEazzy.</h2>
+            <p class="sub--heading">Open 6 AM to late night everyday</p>
+            <button class="button--try--app">
+                Try DelEazzy Delivery App
+            </button>
+            <p class="sub--heading">
+                Trusted by millions of shoppers in Bangalore, Delhi-NCR<br />
+                Hyderabad, Mumbai, Chennai, Pune & other cities
+            </p>
+        </div>
+        <div class="intro--image">
+            <img src="grocery_bag.png" height="400px">
+        </div>
+    </div>
+
+    
+    <div ng-view></div>
+
+
+
+<script>
+  angular.module("myapp", ["ngRoute"])
+.config(function($routeProvider) {
+  $routeProvider
+  .when("/about", {
+    templateUrl : "about.html"
+  })
+  .when("/register", {
+    templateUrl : "register.html"
+  })
+  .when("/products", {
+    templateUrl : "products.html",
+    
+  })
+})
+;
+</script>
+
+<div class="footer">
+    <div class="sub--footer">
+
+        <div class="footer--list">
+            <p style="text-align: center; font-size: 2rem">AVAILABLE IN</p>
+            <br />
+            <ol class="city--links">
+                <li><a class="city--link" href="https://www.google.com/search?q=bangalore&rlz=1C1RXQR_enIN945IN945&oq=bangalore&aqs=chrome.0.0i271j46i433i512j0i131i433i512j46i131i433i512j0i433i512j0i512j69i60l2.3536j0j7&sourceid=chrome&ie=UTF-8" target="_blank">Bangalore</a></li>
+                <li><a class="city--link" href="https://www.google.com/search?q=pune&rlz=1C1RXQR_enIN945IN945&ei=ce9lY5SVKIycseMPkM-B2As&ved=0ahUKEwjUkYDHopb7AhUMTmwGHZBnALsQ4dUDCA8&uact=5&oq=pune&gs_lp=ugYGCAEQARgJugYGCAIQARgIEgxnd3Mtd2l6LXNlcnC4AQP4AQEyBBAAGEMyBBAAGEMyBBAAGEMyChAuGLEDGNQCGEMyChAuGLEDGIMBGEMyBBAAGEMyBxAAGLEDGEMyChAAGLEDGIMBGEMyCBAAGLEDGIMBMhQQLhiABBixAxiDARjHARivARjUAsICChAAGEcY1gQYsAPCAgcQABiwAxhDwgIOEAAY5AIY1gQYsAPYAQHCAhMQLhjHARivARjIAxiwAxhD2AECwgIQEC4Y1AIYyAMYsAMYQ9gBAsICDRAuGMgDGLADGEPYAQLCAgUQABiABMICDhAuGIAEGLEDGMcBGK8BwgIIEAAYgAQYsQPCAhEQLhiABBixAxiDARjHARivAcICCxAAGI8BGI8BGOoCwgILEC4YjwEYjwEY6gLCAgsQABiABBixAxiDAcICERAuGIAEGLEDGIMBGMcBGNEDwgIIEC4YgAQY5QTCAgUQABiRAsICBRAuGJECwgILEC4YgwEYsQMYgATCAg4QLhiDARjUAhixAxiABMICCBAuGLEDGIMBwgIKEC4Y1AIYsQMYQ8ICDRAuGLEDGIMBGNQCGEPCAgQQLhhDwgIHEC4Y1AIYQ8ICDhAuGLEDGIMBGMcBGK8BqAIKkAYTSPwiUJ8FWKwhcAN4AcgBAJABA5gBcqABkQmqAQQxLjEw4gMEIE0YAeIDBCBBGADiAwQgRhgBiAYB&sclient=gws-wiz-serp" target="_blank">Pune</a></li>
+                <li><a class="city--link" href="https://www.google.com/search?q=mumbai&rlz=1C1RXQR_enIN945IN945&ei=i-9lY43NObOVseMP29OTiAg&ved=0ahUKEwjNvsTTopb7AhWzSmwGHdvpBIEQ4dUDCA8&uact=5&oq=mumbai&gs_lp=ugYGCAEQARgJugYGCAIQARgIEgxnd3Mtd2l6LXNlcnC4AQP4AQEyDRAuGIMBGNQCGLEDGEMyDRAuGIMBGNQCGLEDGEMyBBAAGEMyBBAAGEMyChAAGLEDGIMBGEMyCBAAGIAEGLEDMgsQLhiABBixAxiDATIFEAAYgAQyBxAAGLEDGEMyCBAAGIAEGLEDwgIKEAAYRxjWBBiwA8ICChAuGNQCGLADGEPCAg4QABjkAhjWBBiwA9gBAcICDRAuGMgDGLADGEPYAQLCAhAQLhjUAhjIAxiwAxhD2AECwgIKEC4Y1AIYsQMYQ8ICChAuGLEDGNQCGEPCAgsQLhiDARixAxiABMICCxAAGIAEGLEDGIMBwgILEAAYjwEYjwEY6gLCAgcQLhjUAhhDwgIEEC4YQ8ICERAuGIAEGLEDGIMBGMcBGNEDwgIHEC4YsQMYQ8ICCxAuGIAEGLEDGNQCqAIKkAYQSO8TUMcCWJkRcAJ4AcgBAJABApgBogGgAYcIqgEDMi434gMEIE0YAeIDBCBBGADiAwQgRhgBiAYB&sclient=gws-wiz-serp" target="_blank">Mumbai</a></li>
+                <li><a class="city--link" href="https://www.google.com/search?q=delhi+ncr&rlz=1C1RXQR_enIN945IN945&ei=m-9lY6j1Oe6VseMPzJC4uAc&ved=0ahUKEwjorpXbopb7AhXuSmwGHUwIDncQ4dUDCA8&uact=5&oq=delhi+ncr&gs_lp=ugYGCAEQARgJugYGCAIQARgIEgxnd3Mtd2l6LXNlcnC4AQP4AQEyERAuGIMBGNQCGLEDGIAEGJECMgsQABixAxiDARiRAjIFEAAYkQIyCxAAGIAEGLEDGIMBMgUQABiABDILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMggQABixAxiDATIFEAAYgAQyCBAAGLEDGIMBwgIKEAAYRxjWBBiwA8ICBxAAGLADGEPCAgoQLhjUAhiwAxhDwgIOEAAY5AIY1gQYsAPYAQHCAg0QLhjIAxiwAxhD2AECwgIQEC4Y1AIYyAMYsAMYQ9gBAsICExAuGMcBGNEDGMgDGLADGEPYAQLCAg4QLhiDARjUAhixAxiABMICBxAAGLEDGEPCAgQQABhDwgIIEAAYgAQYsQPCAgsQABiPARiPARjqAsICCxAuGI8BGI8BGOoCwgIEEC4YQ8ICBxAuGNQCGEPCAhEQLhiABBixAxiDARjHARjRA8ICChAuGLEDGIMBGEPCAhAQLhixAxiDARjHARjRAxhDwgIIEC4YgAQYsQOoAgqQBhNIsRtQSVitGXACeAHIAQCQAQOYAW6gAYkLqgEDNS454gMEIE0YAeIDBCBBGADiAwQgRhgBiAYB&sclient=gws-wiz-serp" target="_blank">Delhi-NCR</a></li>
+                <li><a class="city--link" href="https://www.google.com/search?q=hyderabd&rlz=1C1RXQR_enIN945IN945&ei=sO9lY6fWH7WRseMP9NOf2A0&ved=0ahUKEwin7vzkopb7AhW1SGwGHfTpB9sQ4dUDCA8&uact=5&oq=hyderabd&gs_lp=ugYGCAEQARgJugYGCAIQARgIEgxnd3Mtd2l6LXNlcnC4AQP4AQEyCBAAGLEDGJECMhEQLhixAxiDARjHARivARiRAjILEC4Y1AIYsQMYkQIyCBAuGLEDGJECMgsQABixAxiDARiRAjIEEAAYQzIEEAAYQzIEEAAYQzIEEAAYQzIKEAAYgAQYsQMYCsICChAAGEcY1gQYsAPCAgcQABiwAxhDwgIOEAAY5AIY1gQYsAPYAQHCAg0QLhjIAxiwAxhD2AECwgIQEC4Y1AIYyAMYsAMYQ9gBAsICDhAuGIMBGNQCGLEDGIAEwgILEAAYgAQYsQMYgwHCAgUQABiABMICChAAGLEDGIMBGEPCAggQABixAxiDAcICCxAAGI8BGI8BGOoCwgILEC4YjwEYjwEY6gLCAgQQLhhDwgIREC4YgwEYxwEYsQMY0QMYgATCAggQLhiABBixA8ICChAAGLEDGIMBGArCAg4QLhiABBixAxiDARjUAsICCBAuGLEDGIMBwgIFEAAYkQLCAgoQLhixAxjUAhhDwgINEC4YsQMYxwEY0QMYQ8ICBxAAGLEDGEPCAggQABiABBixA8ICChAuGNQCGLEDGEOoAgqQBhJImBhQOViwFnACeAHIAQCQAQOYAYgBoAGBDaoBBDMuMTLiAwQgTRgB4gMEIEEYAOIDBCBGGAGIBgE&sclient=gws-wiz-serp" target="_blank">Hyderabad</a></li>
+                <li><a class="city--link" href="https://www.google.com/search?q=Chennai&rlz=1C1RXQR_enIN945IN945&ei=v-9lY87HLM3gseMPrve4OA&ved=0ahUKEwiOo53sopb7AhVNcGwGHa47DgcQ4dUDCA8&uact=5&oq=Chennai&gs_lp=Egxnd3Mtd2l6LXNlcnC4AQP4AQEyBRAAGJECMgUQABiRAjIFEAAYkQIyBRAAGJECMgsQABiABBixAxiDATIIEC4YgAQYsQMyCxAuGIAEGLEDGIMBMgsQLhiABBixAxiDATIIEAAYsQMYgwEyBRAAGIAEwgIEEAAYR8ICCxAuGMcBGK8BGJECwgIFEC4YkQLCAgoQABixAxiDARhDwgILEC4YgAQYxwEY0QPCAg4QLhixAxiDARjHARjRA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIIEC4YsQMY1ALCAggQLhixAxiDAcICBRAuGIAEwgILEC4YgAQYsQMY1ALCAg4QLhiABBixAxiDARjUApAGCEidDVCaA1jnCnAAeAPIAQCQAQCYAZMBoAHdBqoBAzAuN-IDBCBNGAHiAwQgQRgA4gMEIEYYAIgGAQ&sclient=gws-wiz-serp" target="_blank">Chennai</a></li>
+            </ol>
+        </div>
+
+        <hr />
+
+        <div class="footer--list">
+            <p style="text-align: center; font-size:2rem">FOLLOW US</p>
+            <br />
+            <img src="image_map.png" usemap="#followmap"/>
+            <map name="followmap">
+                <area shape="rect" coords="100,30,210,150" alt="instagram" href="https://www.instagram.com/" target="_self" />
+                <area shape="rect" coords="320,30,520,150" alt="facebook" href="https://www.facebook.com/" target="_self" />
+                <area shape="circle" coords="510,30,550,150" alt="twitter" href="https://twitter.com/login" target="_self" />
+                <area shape="circle" coords="600, 30, 860, 150" alt="pinterest" href="https://in.pinterest.com/" target="_self" />
+            </map>
+        </div>
+    </div>
+</div>    
+    
+</body>
+</html>
