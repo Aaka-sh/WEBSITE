@@ -1,0 +1,44 @@
+[
+    {
+       "name":"Amul Milk",
+       "price":50,
+       "description":"Fresh Cow Milk - Pasturised",
+       "category":"Organic",
+       "calories":"90"
+    },
+    {
+       "name":"Almond Cookies",
+       "price":150,
+       "description":"Almond Cookies made with Honey and Real almonds",
+       "category":"Cookies",
+       "calories":"190"
+    },
+    {
+       "name":"Britannia Brown Bread",
+       "price":40,
+       "description":"Healthy brown bread from the house of Britannia",
+       "category":"Bakery",
+       "calories":"140"
+    },
+    {
+       "name":"Peanut Butter",
+       "price":230,
+       "description":"Crunchy Peanut Butter",
+       "category":"Spreads",
+       "calories":"190"
+    },
+    {
+       "name":"Buttermilk",
+       "price":20,
+       "description":"Spiced Butter Milk",
+       "category":"Drinks",
+       "calories":"60"
+    },
+    {
+       "name":"Apples",
+       "price":110,
+       "description":"Juicy Apples",
+       "category":"Organic",
+       "calories":"30"
+    }
+ ]
