@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Spectral&display=swap" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>-
+    <div class="products-division" ng-controller="groceryctrl">
+        <div id="tablediv">
+            Rows to Display:<input type="number" step="1" min="0" max="6" ng-model="rowlimit"/><br><br>
+            <div style="width: fit-content;">
+                <div style="width: fit-content;float: left;">                 
+                    <label>Search by Name: </label> <input ng-model="searchtxt.name" class="text-class" type="text" placeholder="Enter Name"  ng-keypress="turnGreen()"><br /><br />              
+                    <label>Search by Price: </label><input ng-model="searchtxt.price" class="text-class" type="text" placeholder="Enter Price"><br /><br />
+                </div>
+                <div style="width: fit-content;float: right;margin-left: 100px;">                
+                    Search by Description: <input ng-model="searchtxt.description" class="text-class" type="text" placeholder="Enter Description"><br /><br />               
+                    Search by Category: <input ng-model="searchtxt.category" class="text-class" type="text" placeholder="Enter Category"><br /><br />                                
+                </div>
+            </div>
+            <div>
+                <h2 style="margin-top: 100px;margin-left: 47%;">Menu </h2>
+                <table>
+                    <tr>
+                        <th >Name <i class="fa fa-sort" ng-click="orderByMe('name')"></i></th>
+                        <th>Price <i class="fa fa-sort" ng-click="orderByMe('price')"></i></th>
+                        <th>Calories</th>
+                        <th>Category</th>                        
+                        <th>Description <i class="fa fa-sort" ng-click="orderByMe('calories')"></i></th>        
+                    </tr>                    
+                    <tr ng-repeat="fd1 in fd|limitTo:rowlimit|filter:searchtxt|orderBy:myOrderBy|filter:changeColorFilter">
+                        <td ng-style="customStyle.style">{{fd1.name}}</td>
+                        <td>&#8377;{{fd1.price|number:0}}</td>
+                        <td>{{fd1.calories}}</td>
+                        <td class="{{fd1.class}}" style="font-weight: bold;">{{fd1.category|uppercase}}</td>
+                        <td>{{fd1.description|lowercase}}</td>                
+                    </tr>                
+                </table>
+            </div>           
+        </div>
+    </div>
+</body>
+</html>
