@@ -9,10 +9,10 @@ angular.module("grocery",[])
 
 .controller("groceryctrl",function($scope, $http)
 {
-    $http.get("http://localhost:3000")
+    $http.get("http://localhost:3000/data")
     .then(function(response) {
       $scope.fd=response.data;
-      $scope.rowlimit=6;
+      $scope.rowlimit=$scope.fd.length;
       $scope.orderByMe = function(x) {
           $scope.myOrderBy = x;
       }
